@@ -1,0 +1,818 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: Trebuchet MS, Helvetica;
+}
+
+/* Шапка сайту */
+
+header {
+  width: 100%;
+  padding: 10px 0.5% 0px 0.5%;
+  background: transparent;
+  float: left;
+  position: fixed;
+}
+
+header #logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header #logo span {
+  font-size: 1.7em;
+  line-height: 45px;
+  margin-left: 40px;
+  font-family: 'Suez One', serif;
+  text-align: center;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about {
+  text-align: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 22px;
+  line-height: 40px;
+  margin-bottom: 10px;
+
+}
+
+#about > a {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+#about > a:hover {
+  color: #b0b0b0;
+  text-decoration: underline;
+  box-shadow:
+    1px 1px #53ea93,
+    2px 2px #53ea93,
+    3px 3px #53ea93,
+    4px 4px #53ea93,
+    5px 5px #53ea93,
+    6px 6px #53ea93,
+    7px 7px #53ea93;
+  -webkit-transform: translateX(-7px);
+  transform: translateX(-7px);
+}
+
+#about > a:not(:last-child) {
+  margin-right: 7%;
+
+}
+
+.main_button_c{
+margin-left: 1%;
+margin-top: 2%;
+}
+
+.main_button{
+display: inline-block;
+width: 260px;
+height: 60px;
+background: url('images/button1_d.png') no-repeat ;
+
+transition: all .3s ease;
+
+}
+
+.main_button:hover{
+display: inline-block;
+width: 260px;
+height: 60px;
+background: url('images/button1_h.png') no-repeat;
+}
+
+
+/* Стилі для шапки */
+
+.fixed {
+  z-index: 5000;
+  background-color: #fff;
+  border-bottom: 1px solid silver;
+}
+
+header.fixed #logo {
+  color: #343434;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #7c7c7c}
+
+/* Головний блок на сайті */
+
+#top {
+  width: 100%;
+  background-image: url(images/img1_main_banner.jpeg);
+  background-size: cover;
+  text-align: left;
+  color: #fff;
+}
+
+#top div {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 150%;
+  max-width: 390px;
+  min-width: 250px;
+  letter-spacing: 0.2em;
+  padding-left: 12%;
+  padding-top: 1%;
+
+  color: #fff;
+}
+@media (min-width: 1001px) {
+  #top {
+    font-size: 40px;
+    height: 800px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+  #top {
+    font-size: 35px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  #top {
+    font-size: 25px;
+    padding-top: 50%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 450px) {
+  #top {
+    font-size: 0.9em;
+  }
+}
+
+#top h1 {
+  padding-top: 11%;
+  padding-left: 10%;
+  padding-right: 20%;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+}
+
+#top h3 {
+  color: #ccc;
+}
+
+    /* стилі для модального вікна */
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 25px;
+      width: 30%;
+      text-align: center;
+      transition: opacity 1s ease;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    /* Стилізація input в модальному вікні */
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+/* Стилізація кнопки "Передзвоніть мені" в модальному вікні */
+.modal .call-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.modal .call-button:hover {
+  background-color: #45a049;
+}
+
+.modal .call-button:focus {
+  outline: none;
+}
+
+/* Блок с стилями для "послуг", "Про нас" та "Відгуки"*/
+
+#main {
+  float: left;
+  background-color: #f6f6f6;
+  border-top: 2px solid silver;
+  color: #484848;
+  font-size: 1.3em;
+}
+
+@media (min-width: 1364px) {
+  #main {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+  }
+  #main_2 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    text-align: center!important;
+  }
+
+#main_2 .s_texts {
+  padding-bottom: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  -moz-columns: 3;
+  -webkit-columns: 3;
+  columns: 3;
+}
+
+  .s_text_2 .main_button_2{
+margin-left: 23%;
+padding-top: 6%!important;
+}
+.s_text .main_button_c{
+margin-left: 22%;
+padding-top: 6%!important;
+}
+.s_text_3 .main_button_3{
+padding-top: 10%!important;
+}
+#main_2 .s_text_3 {
+  padding-left: 27%!important;
+  padding-right: 27%!important;
+  width: 45%!important;
+  text-align: center;
+}
+#main_2 .s_text_4 {
+  padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+#main_2 .s_text_4 > img {
+  padding-left: 40%;
+  padding-right: 60%;
+}
+#main_2 .s_text_5 > img {
+  padding-left: 40%;
+  padding-right: 60%;
+}
+#main_2 .s_text_6 > img {
+  padding-left: 40%;
+  padding-right: 60%;
+}
+#main_2 .s_text_5 {
+   padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+#main_2 .s_text_6 {
+    padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+}
+
+@media (max-width: 1364px) {
+  #main {
+    padding: 100px 10%;
+    width: 80%;
+    text-align: center!important;
+
+  }
+  #main .intro {
+    width: 500px;
+    padding-left: 21%!important;
+    padding-top: 5%;
+}
+#main .intro_2 {
+    padding-left: 20%!important;
+
+}
+  #main .s_text {
+  text-align: center!important;
+  padding-left: 20%!important;
+}
+#main .s_text_2 {
+  text-align: center!important;
+
+}
+  #main #h3_wash_p{
+
+  text-align: center!important; 
+  font-family: Raleway;
+}
+  #main #h3_wash{
+
+  text-align: center!important; 
+
+}
+ #main_2 {
+    padding: 100px 10%;
+    width: 80%;
+    text-align: center!important;
+
+  }
+  #main_2 .intro {
+    width: 500px;
+    padding-left: 21%!important;
+    padding-top: 5%;
+}
+#main_2 .intro_2 {
+    padding-left: 20%!important;
+
+}
+  #main_2 .s_text {
+  text-align: center!important;
+  padding-left: 20%!important;
+}
+#main_2 .s_text_2 {
+  text-align: center!important;
+
+}
+  #main_2 #h3_wash_p{
+
+  text-align: center!important; 
+  font-family: Raleway;
+}
+  #main_2 #h3_wash{
+
+  text-align: center!important; 
+
+}
+.s_text .main_button_c{
+margin-left: 22%;
+margin-top: 2%;
+}
+
+.s_text_2 .main_button_2{
+margin-left: 23%;
+padding-top: 5%!important;
+}
+
+.s_text_3 .main_button_3{
+padding-top: 10%!important;
+}
+
+#main_2 .s_text_3 {
+  padding-left: 20%!important;
+  padding-right: 20%!important;
+  width:60%!important;
+  text-align: center;
+}
+#main_2 .s_text_4 {
+  padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+#main_2 .s_text_4 > img {
+  padding-left: 50%;
+  padding-right: 50%;
+}
+#main_2 .s_text_5 > img {
+  padding-left: 50%;
+  padding-right: 50%;
+}
+#main_2 .s_text_6 > img {
+  padding-left: 50%;
+  padding-right: 50%;
+}
+#main_2 .s_text_5 {
+   padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+#main_2 .s_text_6 {
+    padding: 5%;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 30px;
+  font-size: 20px;
+}
+}
+
+@media (max-width: 950px) {
+
+  #main h1 {
+padding-left: 9%!important;
+}
+}
+
+#main div {
+  width: 40%;
+  margin-right: 1%;
+  float: left;
+}
+#main h1 {
+  font-size: 60px;
+  line-height: 45px;
+  font-family: 'Suez One', serif;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+#main h2 {font-size: 3em}
+#main #h3_wash {
+  font-size: 45px;
+  line-height: 45px;
+  margin-left: 0px;
+  font-family: 'Suez One', serif;
+  text-align: left;
+  font-weight: bold;
+  padding-bottom:2% ;
+
+}
+#main span {
+  color: #a0a0a0;
+  padding-left: 1%;
+  padding-top: 5%;
+
+}
+
+#main .intro img {
+  width: 500px;
+  
+}
+#main .intro_2 img {
+  width: 500px;
+  
+}
+#main .intro {
+    width: 500px;
+    padding-left: 18%;
+    padding-top: 5%;
+}
+#main .intro_2 {
+    width: 500px;
+    padding-left: 1%;
+    padding-top: 5%;
+}
+#main .s_text {
+  width: 500px;
+  padding-top: 5%;
+  text-align: left;
+  padding-left: 3%;
+}
+#main .s_text_2 {
+  width: 500px;
+  padding-top: 5%;
+  text-align: left;
+  padding-left:22%;
+}
+#main_2 .s_text_3 {
+  width: 800px;
+  text-align: center!important;
+  font-family: Raleway;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+#main #h3_wash_p{
+  font-size: 28px;
+  padding-top: 3%;
+  text-align: left; 
+  font-family: Raleway;
+}
+#main_2 {
+  text-align: center!important;
+}
+#main_2 > h1 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 40px;
+}
+.s_text_3 .main_button_3{
+padding-bottom: 10%!important;
+}
+
+#overview {
+  float: left;
+  background-image: url(https://images.unsplash.com/1/work-station-straight-on-view.jpg?ixlib=rb-0.3.5&s=d055e15d0b8fd2de7295b726274d312b&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
+
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#overview h2 {font-size: 4em}
+#overview h4 {color: #ccc; font-size: 1.5em}
+
+@media (min-width: 561px) {
+  #overview h2 {font-size: 4em}
+}
+
+@media (max-width: 560px) {
+  #overview h2 {font-size: 2em}
+}
+
+#overview .img {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  margin-top: 50px;
+}
+
+#overview .img:nth-child(odd) {
+  margin-left: 18%;
+}
+
+#overview img {
+  background: #fafafa;
+  padding: 5px;
+  border: 2px solid silver;
+  float: left;
+  width: 100%;
+  max-width: 500px;
+}
+
+#overview span {
+  float: left;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  #overview .img {
+    width: 80%!important;
+    margin-right: 0!important;
+    margin-left: 10%!important;
+  }
+}
+
+#contacts {
+  width: 100%;
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  border-top: 4px solid #ccc;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', serif;
+  font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#form_input {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+@media (min-width: 1051px) {
+  #form_input {
+    width: 35%;
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 1050px) {
+  #form_input {
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+
+#form_input label {
+  color: #505050;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_input label > span {
+  color: #e87e7e;
+}
+
+#form_input input {
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 10px 2%;
+  border-radius: 7px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+#form_input input:focus, #form_input textarea:focus {
+  border-color: #333;
+}
+
+
+.btn {
+  float: left;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2em;
+  background-color: #ec6550;
+  text-shadow: #454545 0 0 2px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn:hover {
+  background-color: #c15443;
+}
+
+
+
+/* Footer */
+
+#footer {
+  background-color: #333333;
+  border-top: 2px dashed #e4e3e3;
+  width: 100%;
+  float: left;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  height: 220px;
+}
+
+@media (min-width: 801px) {
+  #footer div {
+    width: 18%;
+    margin-left: 6%;
+    float: left;
+  }
+}
+
+@media (max-width: 800px) {
+  #footer div {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+  }
+}
+
+#footer .title {
+  font-weight: lighter;
+  color: #a3a0ad;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+#footer .heading {
+  color: #7d7d7d;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#footer p {
+  font-family: Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  font-size: 0.95em;
+  margin-bottom: 40px;
+}
+#footer .f_title {
+    font-size: 1.7em;
+    line-height: 45px;
+    font-family: 'Suez One', serif;
+    text-align: inherit;
+    color: #fff;
+}
+#footer .f_menu {
+  text-align: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 22px;
+  line-height: 70px;
+  text-align: left;
+}
+
+#footer .f_menu > a{
+   color: #fff;
+  text-decoration: none;
+}
+
+#footer .f_menu > a:hover{
+color: #b0b0b0;
+  text-decoration: underline;
+  box-shadow:
+    1px 1px #53ea93,
+    2px 2px #53ea93,
+    3px 3px #53ea93,
+    4px 4px #53ea93,
+    5px 5px #53ea93,
+    6px 6px #53ea93,
+    7px 7px #53ea93;
+  -webkit-transform: translateX(-7px);
+  transform: translateX(-7px);
+}
+#footer .f_number {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 22px;
+  line-height: 25px;
+  text-align: right;
+  color: #fff;
+}
+#footer .f_adress{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 22px;
+  line-height: 25px;
+  text-align: left;
+  color: #fff;
+  padding-top: 1.5%;
+}
